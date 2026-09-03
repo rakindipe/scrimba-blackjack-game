@@ -10,9 +10,18 @@ body {
 }
 
 h1 {
-  color: goldenrod
+  color: goldenrod;
 } 
 
 #message-el {
   font-style: italic;
+}
+
+#start-btn {
+  text-transform: uppercase;
+  color: #016f32;
+  width: 150px;
+  background: goldenrod;
+  border: none;
+  border-radius: 2px;
 }
