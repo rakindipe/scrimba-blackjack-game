@@ -1,3 +1,16 @@
+/*
+At some point use replace the random function below with
+a fetch request to the deckofcardsapi to simulate playing with a 
+real deck of card
+*/
+
+// fetch request to api --> use LATER!!!
+fetch("https://deckofcardsapi.com/api/deck/new/shuffle/")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  });
+
 // generate random numbers of cards
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
