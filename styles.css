@@ -24,4 +24,6 @@ h1 {
   background: goldenrod;
   border: none;
   border-radius: 2px;
+  padding: 5px 0px;
+  font-weight: bold;
 }
