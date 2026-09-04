@@ -38,7 +38,9 @@ const startGame = () => {
 // blackjack game logic
 const renderGame = () => {
   sumEl.textContent = `Sum: ${sum}`;
-  cardsEl.textContent = `Cards: ${cards[0]} ${cards[1]}`;
+  // cardsEl.textContent = `Cards: ${cards[0]} ${cards[1]}`;
+  cardsEl.textContent = `Cards: ${cards}`;
+
   if (sum <= 20) {
     message = "Do you want to draw a new card?";
   } else if (sum === 21) {
@@ -55,9 +57,10 @@ const renderGame = () => {
 const newCard = () => {
   console.log("Drawing a new card from the deck!");
 
-  let card = 5;
+  let card = getRandomInt(2, 11);
 
   sum += card;
+  cards.push(card);
   console.log(sum);
 
   renderGame();
