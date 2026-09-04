@@ -17,7 +17,14 @@ h1 {
   font-style: italic;
 }
 
-#start-btn {
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+#start-btn, #new-card-btn {
   text-transform: uppercase;
   color: #016f32;
   width: 150px;
