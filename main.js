@@ -15,7 +15,16 @@ fetch("https://deckofcardsapi.com/api/deck/new/shuffle/")
 
 // generate random numbers for cards
 const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  // count ace as 11 & K, Q, J as 10
+  if (randomNumber > 10) {
+    return 10;
+  } else if (randomNumber === 1) {
+    return 11;
+  } else {
+    return randomNumber;
+  }
 };
 
 // variables
