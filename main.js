@@ -13,7 +13,7 @@ fetch("https://deckofcardsapi.com/api/deck/new/shuffle/")
     console.log(data);
   });
 
-// generate random numbers of cards
+// generate random numbers for cards
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -39,7 +39,13 @@ const startGame = () => {
 const renderGame = () => {
   sumEl.textContent = `Sum: ${sum}`;
   // cardsEl.textContent = `Cards: ${cards[0]} ${cards[1]}`;
-  cardsEl.textContent = `Cards: ${cards}`;
+  // cardsEl.textContent = `Cards: ${cards}`;
+
+  // alt way of rendering cards
+  cardsEl.textContent = "Cards: ";
+  for (let card of cards) {
+    cardsEl.textContent += card + " ";
+  }
 
   if (sum <= 20) {
     message = "Do you want to draw a new card?";
