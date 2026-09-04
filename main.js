@@ -28,12 +28,9 @@ const getRandomInt = (min, max) => {
 };
 
 // variables
-let firstCard = getRandomInt(2, 11);
-let secondCard = getRandomInt(2, 11);
-let cards = [firstCard, secondCard];
-let sum = firstCard + secondCard;
+let cards = [];
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message;
 let messageEl = document.querySelector("#message-el");
 let sumEl = document.querySelector("#sum-el");
@@ -41,6 +38,12 @@ let cardsEl = document.querySelector("#cards-el");
 
 // start game
 const startGame = () => {
+  isAlive = true;
+  let firstCard = getRandomInt(2, 11);
+  let secondCard = getRandomInt(2, 11);
+  let sum = firstCard + secondCard;
+  cards = [firstCard, secondCard];
+
   renderGame();
 };
 
