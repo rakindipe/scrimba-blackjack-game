@@ -21,6 +21,7 @@ const getRandomInt = (min, max) => {
 // variables
 let firstCard = getRandomInt(2, 11);
 let secondCard = getRandomInt(2, 11);
+let cards = [firstCard, secondCard];
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
@@ -29,10 +30,15 @@ let messageEl = document.querySelector("#message-el");
 let sumEl = document.querySelector("#sum-el");
 let cardsEl = document.querySelector("#cards-el");
 
-// blackjack game logic
+// start game
 const startGame = () => {
+  renderGame();
+};
+
+// blackjack game logic
+const renderGame = () => {
   sumEl.textContent = `Sum: ${sum}`;
-  cardsEl.textContent = `Cards: ${firstCard} ${secondCard}`;
+  cardsEl.textContent = `Cards: ${cards[0]} ${cards[1]}`;
   if (sum <= 20) {
     message = "Do you want to draw a new card?";
   } else if (sum === 21) {
@@ -45,7 +51,14 @@ const startGame = () => {
   messageEl.textContent = message;
 };
 
-// new card function
+// draw new card
 const newCard = () => {
   console.log("Drawing a new card from the deck!");
+
+  let card = 5;
+
+  sum += card;
+  console.log(sum);
+
+  renderGame();
 };
