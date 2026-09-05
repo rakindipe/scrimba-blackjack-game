@@ -36,6 +36,11 @@ let message;
 let messageEl = document.querySelector("#message-el");
 let sumEl = document.querySelector("#sum-el");
 let cardsEl = document.querySelector("#cards-el");
+let player = {
+  name: "Player",
+  chips: 200,
+};
+let playerEl = document.querySelector("#player-el");
 
 // start game
 const startGame = () => {
@@ -46,6 +51,8 @@ const startGame = () => {
 
   sum = firstCard + secondCard;
   cards = [firstCard, secondCard];
+
+  playerEl.textContent = `${player.name}: $${player.chips}`;
 
   renderGame();
 };
